@@ -10,9 +10,14 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ["PyCrypto"]
+requirements = [
+    "PyCrypto",
+]
 
-setup_requirements = [ ]
+setup_requirements = [
+    "python-setuptools",
+    "python-pkg-resources",
+]
 
 test_requirements = [ ]
 
