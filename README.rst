@@ -1,13 +1,25 @@
-PYCRYPTOPLUS
-=============
+==========
+CryptoPlus
+==========
 
-TABLE OF CONTENTS
-==================
+.. image:: https://img.shields.io/pypi/v/CryptoPlus.svg
+        :target: https://pypi.python.org/pypi/CryptoPlus
 
-1. WHAT IS CRYPTOPLUS
-2. INSTALLING
-3. GETTING STARTED
-4. LIMITATIONS
+.. image:: https://img.shields.io/travis/doegox/CryptoPlus.svg
+        :target: https://github.com/doegox/python-cryptoplus/workflows/test/badge.svg
+
+.. image:: https://readthedocs.org/projects/CryptoPlus/badge/?version=latest
+        :target: https://CryptoPlus.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+.. toctree::
+   :numbered:
+
+    WHAT IS CRYPTOPLUS
+    INSTALLING
+    GETTING STARTED
+    LIMITATIONS
 
 1. WHAT IS CRYPTOPLUS
 ======================
@@ -17,23 +29,27 @@ PyCryptoPlus provides same ciphers as included in pycrypto but also new ones,
 all being written 100% in Python. Some additional chaining modes have been
 added, also in pure Python, while the ones already available in pycrypto are
 provided in pure python in this package.
+
 The reasoning is that Python code has the advantage to be more readable and
 so easier to be adapted to your needs or experiments.
+
 All other functions of pycrypto are still available via the interface
 of CryptoPlus. The new cipher implementations can be accessed via
 CryptoPlus.Cipher.python_* while the original ones from pycrypto are
 still available under their original name via CryptoPlus.Cipher.*.
+
 When using the original ciphers, the original pycrypto code written in C is
 used but the chaining modes being used are the new ones in Python.
 
 New functions:
-    Ciphers:
-        Rijndael
-        Serpent
-        Twofish
-    Chaining Modes:
-        XTS
-        CMAC
+--------------
+* Ciphers:
+  * Rijndael
+  * Serpent
+  * Twofish
+* Chaining Modes:
+  * XTS
+  * CMAC
 
 Note: for the cipher algorithms, code has been reused from third parties.
 Corresponding copyright notices are available in their source code.
@@ -42,10 +58,12 @@ Corresponding copyright notices are available in their source code.
 ==============
 
 required packages before installing:
-    - python-setuptools
-    - python-pkg-resources
 
-python setup.py install
+* ``python-setuptools``
+* ``python-pkg-resources``
+
+.. code-block:: shell
+    python setup.py install
 
 3. GETTING STARTED
 ===================
@@ -55,22 +73,35 @@ http://www.dlitz.net/software/pycrypto/doc/
 
 Biggest changes are the addition of some chain modes and block ciphers.
 A lot of examples are provided as docstrings.
-Have a look at them in '../CryptoPlus/Cipher/*.py' or via an interactive
-python session by using 'CryptoPlus.Cipher.python_AES.new?'.
-Once a cipher object is constructed with
-'cipher = CryptoPlus.Cipher.python_AES.new(...)'
+
+Have a look at them in ``../CryptoPlus/Cipher/*.py`` or via an interactive
+python session by using ``CryptoPlus.Cipher.python_AES.new?``.
+
+Once a cipher object is constructed, e.g.
+
+.. code-block:: python
+    cipher = CryptoPlus.Cipher.python_AES.new(...)
+
 you can get more info about encrypting and decrypting by reading
 the apprioprate docstring ('cipher.encrypt?','cipher.decrypt?').
 
-Some test functions are provided in the docstrings and in the 'test'
+Some test functions are provided in the docstrings and in the ``test``
 folder. Run all the doctests in the new Cipher function by using
-the '../test/test_doctest.py' script. '../test/test.py' provides
+the ``../test/test_doctest.py`` script. ``../test/test.py`` provides
 some test function for the testvectors available from the module via
-'CryptoPlus.Cipher.testvectors'. Have a look at the test.py sourcecode
+``CryptoPlus.Cipher.testvectors``. Have a look at the ``test.py`` sourcecode
 to have an idea of how to use those test vectors.
 
 4. LIMITATIONS
 ===============
 
-CMAC can only be used with ciphers of 64 or 128 bits blocksizes
-XTS can only be used with ciphers of 128 bits blocksize
+* CMAC can only be used with ciphers of 64 or 128 bits blocksizes
+* XTS can only be used with ciphers of 128 bits blocksize
+
+5. CREDITS
+==========
+
+* ``CryptoPlus`` was originally co-authored with Christophe Oosterlynck
+* Additional contributions by `various others`_
+
+.. _various others: https://github.com/doegox/python-cryptoplus/graphs/contributors
