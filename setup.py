@@ -15,8 +15,7 @@ requirements = [
 ]
 
 setup_requirements = [
-    "python-setuptools",
-    "python-pkg-resources",
+    "setuptools",
 ]
 
 test_requirements = [ ]
@@ -39,7 +38,8 @@ setup(
     include_package_data=True,
     keywords='CryptoPlus',
     name='CryptoPlus',
-    packages=find_packages(include=["src"]),
+    package_dir={'': 'src'},
+    packages=find_packages("src"),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,

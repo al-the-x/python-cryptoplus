@@ -59,11 +59,10 @@ Corresponding copyright notices are available in their source code.
 
 required packages before installing:
 
-* ``python-setuptools``
-* ``python-pkg-resources``
+* ``setuptools``
 
 .. code-block:: shell
-    python setup.py install
+    pip install CryptoPlus
 
 3. GETTING STARTED
 ===================
